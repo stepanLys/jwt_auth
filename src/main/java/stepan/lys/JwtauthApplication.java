@@ -2,6 +2,8 @@ package stepan.lys;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class JwtauthApplication {
@@ -10,4 +12,8 @@ public class JwtauthApplication {
 		SpringApplication.run(JwtauthApplication.class, args);
 	}
 
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }
